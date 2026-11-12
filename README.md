@@ -19,6 +19,12 @@ Die Basis soll dauerhaft kostenlos bleiben. Die Anwendung soll leicht verständl
 - **[Mitmachen und Partnerschaften](MITMACHEN.md)** – Wer kann helfen?
 - **[Sicherheits- und Nutzungshinweise](SICHERHEIT.md)** – Wofür ist das Projekt noch nicht geeignet?
 
+## Weihnachtsaktion: Schenk Zeit statt noch ein Geschenk
+
+Die erste kostenfreie Mitmachaktion ist das **[Goldene Zeit-Ticket](KAMPAGNE/GOLDENES_ZEIT_TICKET.html)**: eine druckbare Karte für eine gemeinsame halbe Stunde. Datei herunterladen, lokal im Browser öffnen und ausdrucken. Es wird weder eine App noch ein medizinischer Service verschenkt.
+
+Die [Weihnachtsstrategie mit Videoidee und Prüfkriterien](KAMPAGNE/WEIHNACHTS_KAMPAGNE_2026.md) ist offen dokumentiert. Eine eigenständige öffentlich freigegebene Website und ein Social-Media-Livegang sind noch nicht erfolgt.
+
 ## Mitgestalten
 
 Wir suchen Menschen und Organisationen, die bei barrierefreier Gestaltung, fachlicher Prüfung, Nutzertests und Verbreitung helfen möchten. Hinweise können über GitHub-Issues gegeben werden. **Bitte keine Namen, Telefonnummern, Gesundheitsdaten oder Notfallberichte öffentlich posten.**
