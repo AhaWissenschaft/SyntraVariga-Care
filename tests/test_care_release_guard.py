@@ -8,7 +8,9 @@ from tools.care_release_guard import (
 )
 
 SAFE_PAGE = """<!doctype html><html lang="de"><head>
-<meta charset="utf-8"><style>body { color: #fff; }</style></head>
+<meta charset="utf-8">
+<meta http-equiv="Content-Security-Policy" content="default-src 'none'; script-src 'none'; connect-src 'none'; style-src 'unsafe-inline'; form-action 'none'">
+<style>body { color: #fff; }</style></head>
 <body><p>kein Notrufdienst; keine zugelassene Digitale Pflegeanwendung.</p>
 <p>Es ist noch keine öffentlich freigegebene App verfügbar.</p>
 <a href="https://github.com/AhaWissenschaft/SyntraVariga-Care">Repository</a>
@@ -33,6 +35,12 @@ class ReleaseGuardTests(unittest.TestCase):
 
     def test_clean_public_preview(self) -> None:
         self.assertEqual(check_preview(self.root), [])
+
+    def test_missing_csp_is_rejected(self) -> None:
+        page = (self.root / "index.html").read_text(encoding="utf-8")
+        page = page.replace('http-equiv="Content-Security-Policy"', 'name="deleted-policy"')
+        (self.root / "index.html").write_text(page, encoding="utf-8")
+        self.assertTrue(check_preview(self.root))
 
     def test_single_quoted_external_script_is_rejected(self) -> None:
         self.write_page("<script src='https://tracker.example/x.js'></script>")
