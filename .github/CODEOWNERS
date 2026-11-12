@@ -1,0 +1,14 @@
+# Ownership declarations take effect as required reviews only with branch rules.
+/.github/                         @AhaWissenschaft
+/agent_coordination/              @AhaWissenschaft
+/AGENTENVERBUND.md                @AhaWissenschaft
+/ARBEITSPLAN_AUTOMATION.md        @AhaWissenschaft
+/README.md                        @AhaWissenschaft
+/index.html                       @AhaWissenschaft
+/SECURITY.md                      @AhaWissenschaft
+/SICHERHEIT.md                    @AhaWissenschaft
+/CONTRIBUTING.md                  @AhaWissenschaft
+/RECHTLICHES_VOR_LIVEGANG.md      @AhaWissenschaft
+/RELEASE_STATUS.md                @AhaWissenschaft
+/tools/                           @AhaWissenschaft
+/tests/                           @AhaWissenschaft
