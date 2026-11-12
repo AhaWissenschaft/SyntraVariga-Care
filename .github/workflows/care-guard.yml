@@ -1,0 +1,40 @@
+name: SyntraVariga-Care deterministic checks
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  preview-and-unit-tests:
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Read-only checkout (immutable action version)
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Deterministic unit tests (Python standard library)
+        run: python3 -m unittest discover -s tests -v
+      - name: Check static public preview
+        run: python3 tools/care_release_guard.py --preview
+
+  release-readiness:
+    if: github.event_name == 'workflow_dispatch'
+    needs: preview-and-unit-tests
+    runs-on: ubuntu-latest
+    timeout-minutes: 5
+    steps:
+      - name: Read-only checkout
+        uses: actions/checkout@11bd71901bbe5b1630ceea73d27597364c9af683 # v4.2.2
+        with:
+          persist-credentials: false
+      - name: Structural launch blockers (manual legal approval still required)
+        run: python3 tools/care_release_guard.py --release
+
+# No deployment, secrets, write permissions, external caches or untrusted issue execution.
