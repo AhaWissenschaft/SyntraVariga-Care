@@ -1,0 +1,26 @@
+name: Allgemeines Feedback
+description: Allgemeine Ideen und Hinweise ohne persönliche Daten
+labels: []
+body:
+  - type: markdown
+    attributes:
+      value: "Bitte keine Namen, Gesundheitsdaten, Adressen, Telefonnummern, Zahlungsdaten oder Notfallberichte eintragen."
+  - type: dropdown
+    id: thema
+    attributes:
+      label: Thema
+      options:
+        - Bedienbarkeit
+        - Barrierefreiheit
+        - Inhaltliche Qualität
+        - Zusammenarbeit / Partnerschaft
+        - Sonstiges
+    validations:
+      required: true
+  - type: textarea
+    id: hinweis
+    attributes:
+      label: Allgemeiner Hinweis
+      description: Bitte nur nicht-personenbezogene Angaben eintragen.
+    validations:
+      required: true
