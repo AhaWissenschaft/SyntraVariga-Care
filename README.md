@@ -12,6 +12,13 @@ Die Basis soll dauerhaft kostenlos bleiben. Die Anwendung soll leicht verständl
 
 **Öffentlicher Projektauftakt / Prototyp.** Eine lokale Web-Demo mit verschiedenen Funktionsbereichen wurde erstellt und automatisiert geprüft. Unabhängige Nutzertests, rechtliche und fachliche Freigaben und ein öffentlicher Produktivbetrieb stehen noch aus. **Keine zugelassene Medizin- oder Pflegeanwendung und kein Ersatz für den Notruf.**
 
+## Schnellzugriff
+
+- **[Projekt und geplante Funktionen](ROADMAP.md)** – Was ist geplant?
+- **[Einstieg für freiwillige Tester](TESTEN_EINSTIEG.md)** – Verständlichkeit der Projektinformationen prüfen, ohne persönliche Daten zu teilen.
+- **[Mitmachen und Partnerschaften](MITMACHEN.md)** – Wer kann helfen?
+- **[Sicherheits- und Nutzungshinweise](SICHERHEIT.md)** – Wofür ist das Projekt noch nicht geeignet?
+
 ## Mitgestalten
 
 Wir suchen Menschen und Organisationen, die bei barrierefreier Gestaltung, fachlicher Prüfung, Nutzertests und Verbreitung helfen möchten. Hinweise können über GitHub-Issues gegeben werden. **Bitte keine Namen, Telefonnummern, Gesundheitsdaten oder Notfallberichte öffentlich posten.**
