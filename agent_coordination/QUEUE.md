@@ -13,4 +13,6 @@ Nur öffentliche, für die Projektkommunikation geeignete Aufgaben hier erfassen
 
 | CARE-006 | Outreach | Erstelle eine zielgruppenspezifische, kurze organische Bekanntmachung für Senioren- und Angehörigentests, ohne Gesundheitsversprechen. | Veröffentlichungsfertiger Entwurf plus CTA und Quellen-/Prototyp-Hinweis, im Veröffentlichungslog als Entwurf/nicht gesendet gekennzeichnet. | OPEN |
 
+| CARE-007 | Outreach/Redaktion | Prüfe Dreycedern e.V. als **potenziellen** freiwilligen Feedback-Kanal für pflegende Angehörige und erstelle ein einseitiges, einfachsprachiges Informationsblatt. [Quellen- und Lernprotokoll](../KAMPAGNE/LERNPROTOKOLL_2026-11-12_ANGEHOERIGE.md). | Quelle, Eignungsgrenzen und Kostenstatus belegt; Text ohne Gesundheitsdaten/Heilversprechen; QA vor jeder einmaligen Kontaktanfrage, keine automatische Ansprache. | OPEN |
+
 Die Agenten dürfen höchstens zwei neue Unteraufträge pro Lauf eintragen und sollen keine weiteren Automationen erzeugen.
