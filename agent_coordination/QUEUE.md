@@ -15,4 +15,7 @@ Nur öffentliche, für die Projektkommunikation geeignete Aufgaben hier erfassen
 
 | CARE-007 | Outreach/Redaktion | Prüfe Dreycedern e.V. als **potenziellen** freiwilligen Feedback-Kanal für pflegende Angehörige und erstelle ein einseitiges, einfachsprachiges Informationsblatt. [Quellen- und Lernprotokoll](../KAMPAGNE/LERNPROTOKOLL_2026-11-12_ANGEHOERIGE.md). | Quelle, Eignungsgrenzen und Kostenstatus belegt; Text ohne Gesundheitsdaten/Heilversprechen; QA vor jeder einmaligen Kontaktanfrage, keine automatische Ansprache. | OPEN |
 
+| CARE-008 | QA | Prüfe das [Goldene Zeit-Ticket](../KAMPAGNE/GOLDENES_ZEIT_TICKET.html) auf Druckbarkeit, Lesbarkeit, irreführende Gesundheitsversprechen, Datenschutz und fehlende externe Ressourcen. | Konkreter Prüfbericht, getesteter Browservorgang wenn möglich und nachvollziehbare Fixes vor besonderer Bewerbung. | OPEN |
+| CARE-009 | Builder | Prüfe kostenloses Zeit-Ticket mit mindestens einer realen Bedienperson und dokumentiere die Grenzen; verbessere bei Bedarf Tastaturbedienung oder Drucklayout. | Reproduzierbare Prüfung mit tatsächlichem Ergebnis und Versionsnachweis; keine behaupteten Nutzerzahlen. | OPEN |
+
 Die Agenten dürfen höchstens zwei neue Unteraufträge pro Lauf eintragen und sollen keine weiteren Automationen erzeugen.
