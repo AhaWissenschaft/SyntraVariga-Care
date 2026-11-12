@@ -1,1 +1,8 @@
 blank_issues_enabled: false
+contact_links:
+  - name: Security Policy / Sicherheitsrichtlinie
+    url: https://github.com/AhaWissenschaft/SyntraVariga-Care/blob/main/SECURITY.md
+    about: Read the security policy; do not report vulnerabilities or personal data in public issues.
+  - name: Contribution Guidelines / Mitmachen
+    url: https://github.com/AhaWissenschaft/SyntraVariga-Care/blob/main/MITMACHEN.md
+    about: Information for prospective contributors and project partners.
