@@ -27,6 +27,7 @@ class StaticPreviewParser(HTMLParser):
         super().__init__(convert_charrefs=True)
         self.errors: list[str] = []
         self.in_style = False
+        self.csp: str | None = None
 
     def handle_starttag(self, tag: str, attrs: list[tuple[str, str | None]]) -> None:
         a = dict(attrs)
@@ -34,6 +35,8 @@ class StaticPreviewParser(HTMLParser):
             self.errors.append(f"Forbidden HTML tag: <{tag}>")
         if tag == "style":
             self.in_style = True
+        if tag == "meta" and a.get("http-equiv", "").lower() == "content-security-policy":
+            self.csp = a.get("content", "")
         if tag == "meta" and a.get("http-equiv", "").lower() == "refresh":
             self.errors.append("Meta refresh is not permitted")
         for key, value in attrs:
@@ -74,6 +77,10 @@ def check_preview(root: Path) -> list[str]:
     parser.feed(text)
     parser.close()
     errors.extend(parser.errors)
+    for directive in ("default-src 'none'", "script-src 'none'",
+                      "connect-src 'none'", "form-action 'none'"):
+        if directive not in (parser.csp or ""):
+            errors.append(f"Missing strict CSP directive: {directive}")
 
     # Protect the existing non-medical, non-emergency positioning.
     for pattern, label in (
