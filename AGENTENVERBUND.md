@@ -8,7 +8,7 @@
 - **Minute 13 – QA- und Sicherheitsscout:** Prüft kritische Aussagen, Barrierefreiheit, Datenschutz und Veröffentlichungssperren.
 - **Minute 23 – Zielgruppen- und Partner-Scout:** Sucht öffentlich belegte, kostenlose und erlaubte Möglichkeiten für Tester, Unterstützer und organische Reichweite. Übergibt jeweils eine aussichtsreiche Opportunity.
 - **Minute 33 – Community und Kampagnenredaktion:** Formuliert eigenständig zielgruppengerechte, nachvollziehbare Projektbotschaften auf Deutsch und bei Bedarf Englisch und bereitet Veröffentlichungen vor.
-- **Minute 51 – Care Builder und Integrator:** Übernimmt geprüfte Aufgaben und setzt erforderliche sachliche Korrekturen oder kleine Verbesserungen um.
+- **Minute 51 – Care Builder, Kampagnenregie und produktive Integration:** Übernimmt geprüfte Aufgaben und erstellt pro Lauf nach Möglichkeit ein konkretes, getestetes und nachvollziehbares Produkt-, Onboarding- oder Kampagnenartefakt. Kein Füll-Commit zur künstlichen Fortschrittssimulation.
 
 Es gibt vier öffentliche Care-Automationen, die jeweils **einmal pro Stunde** in unterschiedlichen Zeitfenstern laufen. Marketing umfasst Recherche, Redaktion und erlaubte Veröffentlichung über autorisierte eigene Kanäle. **Eine neue dauerhafte fünfte Care-Automation ist aktuell wegen des Aufgabenlimits nicht möglich.** Die Redaktion ist deshalb in die Community-Rolle integriert.
 
@@ -55,3 +55,9 @@ Recherche (:23) → Redaktion (:33) → QA (:13 im nächsten geeigneten Lauf) �
 - **Konversion:** freiwillige, allgemeine Rückmeldung über GitHub-Issues oder ein später rechtlich geprüftes Kontaktangebot; keine sensiblen Eingaben.
 - **Kernmetriken:** belegte veröffentlichte Beiträge, freiwillige Kontaktanfragen, nutzbare Accessibility-Rückmeldungen und überprüfbare Projekteinstiege; keine hypothetischen Reichweitenzahlen.
 - **Keine Behauptung von Trainingsfortschritt:** Rollen-Spezialisierung erfolgt über Aufgabenprompts und Prüfregeln, nicht durch ein nachgewiesenes Modell-Finetuning.
+
+## Weihnachtsmarketing: konkrete gemeinsame Produktion
+
+Die [Weihnachtskampagne 2026](KAMPAGNE/WEIHNACHTS_KAMPAGNE_2026.md) ist der aktuelle gemeinsame Redaktionsplan. Das [Goldene Zeit-Ticket](KAMPAGNE/GOLDENES_ZEIT_TICKET.html) ist das erste fertige, kostenfreie Mitmachartefakt.
+
+**Wöchentliche Lernschleife:** :23 identifiziert echte Bedürfnis-/Partnerhinweise, :33 erstellt eine konkrete Botschaft, :13 prüft kritische Aussagen und Barrieren, :51 setzt den wichtigsten sicheren Beitrag um. Jede Rolle schreibt messbar beendbare Unteraufgaben statt selbst neue Agenten zu erzeugen. Ohne echten neuen Nutzen keine neuen Artikel, kein Spam, kein künstlicher Fortschritt. Projektseite ist bislang nur im Repository, nicht als freigegebene App live.
