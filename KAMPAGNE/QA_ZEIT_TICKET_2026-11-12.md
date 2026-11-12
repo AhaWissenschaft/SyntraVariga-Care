@@ -25,3 +25,27 @@
 **Nächster Schritt für CARE-009 (Builder):** Die HTML-Datei in einem realen Browser öffnen, Druckvorschau auf A4 mit 100 % und 200 % Zoom prüfen, auf ein Blatt drucken/als PDF speichern und Seitenzahl, Abschneidungen, Kontrast und Tastaturbedienung mit reproduzierbaren Ergebnissen dokumentieren. Leere `span[aria-label]` mit einem Screenreader testen und gegebenenfalls durch einfachere, zugängliche handschriftliche Felder ersetzen. Keine menschlichen Nutzertests behaupten, wenn sie nicht stattgefunden haben.
 
 **Unteraufträge:** Keine neuen; CARE-008 bleibt bis zum visuellen Nachweis teilweise offen, CARE-009 ist bereits in der Queue. Zusätzliche Ausgaben: 0 €.
+
+
+## Nachtrag: numerische Kontrastprüfung (2026-11-12T22:08:36.078Z)
+
+**Prüfstand:** Branch `main`, Ausgangscommit [`530d75e913ac`](https://github.com/AhaWissenschaft/SyntraVariga-Care/commit/530d75e913aca83132f648c78d7202bbcff7cf66); Datei `KAMPAGNE/GOLDENES_ZEIT_TICKET.html`, Git-Blob `1c086e966c969ab32849f8ce48211ae0155c6eb5`. Prüfzeitpunkt: 2026-11-12T22:08:36.078Z (UTC).
+
+**Methode:** Quelltext über öffentlichen GitHub-Dateizugriff gelesen; CSS-Farbwerte statisch extrahiert. Mit JavaScript die sRGB-Kanäle auf 0–1 normiert, nach WCAG linearisiert (bei c ≤ 0,04045: c/12,92; sonst ((c+0,055)/1,055)^2,4), relative Luminanz L = 0,2126R + 0,7152G + 0,0722B und Kontrast (Lmax+0,05)/(Lmin+0,05) berechnet. Mindestgrenzen: normaler Text 4,5:1 (AA), große Schrift 3:1 (AA). Berechnete statische Farbpaarungen:
+
+| Geprüfte CSS-Farbpaarung | Kontrast | AA-Schwelle | Ergebnis |
+|---|---:|---:|---|
+| Ticket Haupttext #ffffff auf #0c1829 | 17,82:1 | 4,5:1 | BESTANDEN |
+| Ticket Kleintext #e2eaf0 auf #0c1829 | 14,65:1 | 4,5:1 | BESTANDEN |
+| Ticket Titel #ffdd8b auf #0c1829 | 13,55:1 | 3:1 | BESTANDEN |
+| Druck Haupttext #111111 auf #ffffff | 18,88:1 | 4,5:1 | BESTANDEN |
+| Druck Kleintext #333333 auf #ffffff | 12,63:1 | 4,5:1 | BESTANDEN |
+| Druck Titel #664a0b auf #ffffff | 8,24:1 | 3:1 | BESTANDEN |
+| Seitentext #3e4751 auf #f4f1e9 | 8,36:1 | 4,5:1 | BESTANDEN |
+
+**Ergebnis:** 7/7 = 100 % der **ausgewählten statischen CSS-Farbpaarungen** bestehen die genannten rechnerischen WCAG-AA-Kontrastgrenzen. Das ist **keine** Aussage über alle Farbkombinationen, Bild-/Symbolkontrast, tatsächliche Bildschirmdarstellung oder allgemeine Barrierefreiheit. Außerdem per Quelltext-Suche erneut bestätigt: A4-/Print-CSS vorhanden; keine eingebetteten aktiven Fremdressourcen oder Formulare erkannt. Keine neue medizinische Funktionszusage entdeckt.
+
+**NICHT GEPRÜFT:** tatsächliche Browser-Druckvorschau, Druckseitenzahl, Seitenumbrüche, 200-%-Zoom, Tastatur-/Screenreader-Verhalten, reale Bedienperson. Drei leere `span[aria-label]`-Felder bleiben ein Zugänglichkeitsrisiko; CARE-009 bleibt zuständig. **BLOCKIERT:** praktische Druck-/Nutzerfreigabe mangels nachgewiesenem Realtest. Keine rechtliche oder medizinische Freigabe, kein Website-Livegang.
+
+**Primärquelle:** W3C, *Web Content Accessibility Guidelines (WCAG) 2.2*, Erfolgskriterien [1.4.3 Contrast (Minimum)](https://www.w3.org/TR/WCAG22/#contrast-minimum) und [Understanding Contrast (Minimum)](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html), Spezifikation WCAG 2.2, abgerufen 2026-11-12; externer Seiteninhalt in diesem Lauf nicht erneut abgerufen, daher keine neue Aussage zu jüngsten Änderungen der Quelle. Reproduzierbar anhand des oben genannten Datei-Blobs und der angegebenen Formeln. Keine Änderungen am Ticket.
+
