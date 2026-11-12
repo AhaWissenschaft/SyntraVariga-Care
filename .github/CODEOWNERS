@@ -1,0 +1,16 @@
+# This file has effect for required reviews only when branch rules enforce it.
+/.github/                         @AhaWissenschaft
+/agent_coordination/              @AhaWissenschaft
+/tools/                           @AhaWissenschaft
+/tests/                           @AhaWissenschaft
+/ARBEITSPLAN_AUTOMATION.md        @AhaWissenschaft
+/AGENTENVERBUND.md                @AhaWissenschaft
+/RECHTLICHES_VOR_LIVEGANG.md      @AhaWissenschaft
+/SICHERHEIT.md                    @AhaWissenschaft
+/SECURITY.md                      @AhaWissenschaft
+/CONTRIBUTING.md                  @AhaWissenschaft
+/docs/LAUNCH_GATES.md             @AhaWissenschaft
+/index.html                       @AhaWissenschaft
+/LICENSE                          @AhaWissenschaft
+/impressum.html                   @AhaWissenschaft
+/datenschutz.html                 @AhaWissenschaft
