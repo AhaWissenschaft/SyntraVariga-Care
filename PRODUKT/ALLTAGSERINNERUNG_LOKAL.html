@@ -32,8 +32,9 @@ f.addEventListener("reset",()=>{say("Eingaben geleert. Bereits angelegte Erinner
 function checkDue(){
  const now=Date.now(),due=reminders.filter(r=>!r.done&&now>=r.dueAt);due.forEach(r=>r.done=true);if(due.length)render();
  if(due.length)say("Erinnerungszeit erreicht oder überschritten (Anzeige möglicherweise verspätet): "+due.map(r=>r.name).join("; ")+".");
+ return due.length;
 }
-document.getElementById("check-now").addEventListener("click",()=>{const previous=status.textContent;checkDue();if(status.textContent===previous)say("Prüfung abgeschlossen: Derzeit keine neue fällige Erinnerung.");});
+document.getElementById("check-now").addEventListener("click",()=>{if(checkDue()===0)say("Prüfung abgeschlossen: Derzeit keine neue fällige Erinnerung.");});
 setInterval(checkDue,15000);
 // Nach Hintergrundpausen auch verpasste Minuten derselben Sitzung nachholen.
 document.addEventListener("visibilitychange",()=>{if(!document.hidden)checkDue()});
