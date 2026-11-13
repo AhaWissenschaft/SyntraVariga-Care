@@ -27,7 +27,7 @@ f.addEventListener("submit",e=>{
  if(reminders.some(r=>!r.done&&r.name.toLocaleLowerCase("de-DE")===name.toLocaleLowerCase("de-DE")&&r.time===time.value)){say("Diese Aufgabe ist für dieselbe Uhrzeit bereits eingetragen.");task.focus();return}
  const now=new Date(),dueAt=new Date(now);const [hours,minutes]=time.value.split(":").map(Number);
  dueAt.setHours(hours,minutes,0,0);const tomorrow=dueAt<=now;if(tomorrow)dueAt.setDate(dueAt.getDate()+1);
- reminders.push({id:++id,name,time:time.value,dueAt:dueAt.getTime(),done:false});render();say("Nur für diese Sitzung hinzugefügt: "+name+", "+time.value+(tomorrow?" (morgen).":" (heute)."));task.value="";time.value="";
+ reminders.push({id:++id,name,time:time.value,dueAt:dueAt.getTime(),done:false});render();say("Nur für diese Sitzung hinzugefügt: "+name+". Erinnerung am "+dueAt.toLocaleString("de-DE",{dateStyle:"medium",timeStyle:"short"})+(tomorrow?" (morgen).":" (heute)."));task.value="";time.value="";
 });
 f.addEventListener("reset",()=>{say("Eingaben geleert. Bereits angelegte Erinnerungen bleiben bestehen.");task.focus()});
 function checkDue(){
