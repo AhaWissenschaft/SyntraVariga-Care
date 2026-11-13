@@ -23,16 +23,17 @@ f.addEventListener("submit",e=>{
  e.preventDefault();const name=task.value.trim();
  if(!name){say("Bitte gib eine Aufgabe ein.");task.focus();return}
  if(!time.value){say("Bitte wähle eine Uhrzeit.");time.focus();return}
- reminders.push({id:++id,name,time:time.value,done:false});render();say("Nur für diese Sitzung hinzugefügt: "+name+", "+time.value+".");f.reset();
+ const now=new Date(),dueAt=new Date(now);const [hours,minutes]=time.value.split(":").map(Number);
+ dueAt.setHours(hours,minutes,0,0);if(dueAt<=now)dueAt.setDate(dueAt.getDate()+1);
+ reminders.push({id:++id,name,time:time.value,dueAt:dueAt.getTime(),done:false});render();say("Nur für diese Sitzung hinzugefügt: "+name+", "+time.value+".");f.reset();
 });
 f.addEventListener("reset",()=>say(""));
 function checkDue(){
- const now=new Date(),clock=String(now.getHours()).padStart(2,"0")+":"+String(now.getMinutes()).padStart(2,"0");
- const due=reminders.filter(r=>!r.done&&r.time===clock);due.forEach(r=>r.done=true);
- if(due.length)say("Jetzt daran denken: "+due.map(r=>r.name).join("; ")+".");
+ const now=Date.now(),due=reminders.filter(r=>!r.done&&now>=r.dueAt);due.forEach(r=>r.done=true);
+ if(due.length)say("Erinnerungszeit erreicht oder überschritten (Anzeige möglicherweise verspätet): "+due.map(r=>r.name).join("; ")+".");
 }
 setInterval(checkDue,15000);
-// Nach Hintergrundpausen sofort nachprüfen; vergangene Minuten werden nicht nachgeholt.
+// Nach Hintergrundpausen auch verpasste Minuten derselben Sitzung nachholen.
 document.addEventListener("visibilitychange",()=>{if(!document.hidden)checkDue()});
 window.addEventListener("focus",checkDue);
 </script></html>
