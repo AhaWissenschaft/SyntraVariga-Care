@@ -1,8 +1,9 @@
 name: Care Static Presentation Guard
 
 on:
-  push:
-    branches: [main]
+  # Temporarily avoid a failed runner-start notification on every main push.
+  # Re-enable push only after the runner/job-start failure is diagnosed.
+  workflow_dispatch:
   pull_request:
     branches: [main]
 
