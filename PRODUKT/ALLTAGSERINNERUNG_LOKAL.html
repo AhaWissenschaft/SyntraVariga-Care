@@ -32,7 +32,13 @@ f.addEventListener("submit",e=>{
 });
 f.addEventListener("reset",()=>{say("Eingaben geleert. Bereits angelegte Erinnerungen bleiben bestehen.");task.focus()});
 function checkDue(){
- const now=Date.now(),due=reminders.filter(r=>!r.done&&now>=r.dueAt);due.forEach(r=>r.done=true);if(due.length)render();
+ const now=Date.now(),due=reminders.filter(r=>!r.done&&now>=r.dueAt);due.forEach(r=>r.done=true);
+ if(due.length){
+  // Beim automatischen Aktualisieren den Tastaturfokus auf dem gleichen Löschknopf behalten.
+  const focusedIndex=[...items.querySelectorAll("li button")].indexOf(document.activeElement);
+  render();
+  if(focusedIndex>=0)items.querySelectorAll("li button")[focusedIndex]?.focus({preventScroll:true});
+ }
  if(due.length)say("Erinnerungszeit erreicht oder überschritten (Anzeige möglicherweise verspätet): "+due.map(r=>r.name).join("; ")+".");
  return due.length;
 }
