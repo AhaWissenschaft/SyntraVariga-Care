@@ -2,7 +2,7 @@
 <html lang="de"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Care – lokale Alltagserinnerung</title>
 <style>*{box-sizing:border-box}body{font:1.2rem/1.5 system-ui;max-width:650px;margin:auto;padding:20px;color:#172538;background:#f5f7fa;overflow-wrap:anywhere}label{display:block;margin-top:18px;font-weight:bold}input{display:block;width:100%;min-width:0}input,button{font:inherit;min-height:48px;padding:8px;border:2px solid #345}button{margin:12px 8px 0 0;background:#173f65;color:white;cursor:pointer}button:focus-visible,input:focus-visible{outline:4px solid orange;outline-offset:3px}li{margin:12px 0;overflow-wrap:anywhere}li button{background:white;color:#173f65}.hint{background:#e2edf6;padding:12px}</style>
 <main><h1>An etwas erinnern lassen</h1><p>Trage eine einfache Alltagsaufgabe ein. Wähle eine Uhrzeit.</p><p class="hint">Nur lokale Vorführung: Erinnerungen werden nicht gespeichert und erscheinen nur, solange diese Seite geöffnet ist. Beim Schließen oder Neuladen gehen alle Einträge verloren. Keine Benachrichtigung bei geschlossener Seite. Bei gesperrtem Bildschirm oder im Hintergrund kann die Anzeige verspätet sein oder ausfallen. Nicht für wichtige oder sicherheitskritische Termine verwenden. Keine Gesundheitsdaten eingeben.</p>
-<form id="f" novalidate><label for="task">Woran möchtest du denken?</label><input id="task" maxlength="100" placeholder="Pflanzen gießen" autocomplete="off"><label for="time">Wann möchtest du erinnert werden?</label><input id="time" type="time" aria-describedby="time-help"><p id="time-help">Ist die gewählte Uhrzeit heute schon vorbei, gilt die Erinnerung erst morgen. Diese Demo erinnert nur bei geöffneter Seite.</p><button>Für diese Sitzung hinzufügen</button><button type="reset">Abbrechen</button></form>
+<form id="f" novalidate><label for="task">Woran möchtest du denken?</label><input id="task" maxlength="100" placeholder="Pflanzen gießen" autocomplete="off"><label for="time">Wann möchtest du erinnert werden?</label><input id="time" type="time" aria-describedby="time-help"><p id="time-help">Ist die gewählte Uhrzeit heute schon vorbei, gilt die Erinnerung erst morgen. Diese Demo erinnert nur bei geöffneter Seite.</p><button>Für diese Sitzung hinzufügen</button><button type="reset">Eingaben leeren</button></form>
 <p id="status" role="status" aria-live="polite"></p><h2>Meine Erinnerungen</h2><p id="empty">Du hast noch keine Erinnerungen angelegt.</p><ul id="items"></ul><p class="hint">SyntraVariga Care ist in Entwicklung. Keine medizinische Beratung oder Notfallfunktion.</p></main>
 <script>
 "use strict";
@@ -27,7 +27,7 @@ f.addEventListener("submit",e=>{
  dueAt.setHours(hours,minutes,0,0);const tomorrow=dueAt<=now;if(tomorrow)dueAt.setDate(dueAt.getDate()+1);
  reminders.push({id:++id,name,time:time.value,dueAt:dueAt.getTime(),done:false});render();say("Nur für diese Sitzung hinzugefügt: "+name+", "+time.value+(tomorrow?" (morgen).":" (heute)."));task.value="";time.value="";
 });
-f.addEventListener("reset",()=>{say("Eingabe zurückgesetzt.");task.focus()});
+f.addEventListener("reset",()=>{say("Eingaben geleert. Bereits angelegte Erinnerungen bleiben bestehen.");task.focus()});
 function checkDue(){
  const now=Date.now(),due=reminders.filter(r=>!r.done&&now>=r.dueAt);due.forEach(r=>r.done=true);if(due.length)render();
  if(due.length)say("Erinnerungszeit erreicht oder überschritten (Anzeige möglicherweise verspätet): "+due.map(r=>r.name).join("; ")+".");
