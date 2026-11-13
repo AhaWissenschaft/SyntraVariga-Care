@@ -13,7 +13,7 @@ function render(){
  items.replaceChildren();empty.hidden=reminders.length>0;
  for(const r of reminders){
   const li=document.createElement("li"),label=document.createElement("span"),button=document.createElement("button");
-  label.textContent=r.name+" – "+r.time;button.textContent="Erinnerung löschen";button.type="button";
+  label.textContent=r.name+" – "+r.time+(r.done?" (Zeit erreicht)":" (ausstehend)");button.textContent="Erinnerung löschen";button.type="button";
   button.setAttribute("aria-label","Erinnerung löschen: "+r.name);
   button.addEventListener("click",()=>{reminders=reminders.filter(x=>x.id!==r.id);render();say("Erinnerung gelöscht.")});
   li.append(label,document.createTextNode(" "),button);items.append(li);
@@ -29,7 +29,7 @@ f.addEventListener("submit",e=>{
 });
 f.addEventListener("reset",()=>say(""));
 function checkDue(){
- const now=Date.now(),due=reminders.filter(r=>!r.done&&now>=r.dueAt);due.forEach(r=>r.done=true);
+ const now=Date.now(),due=reminders.filter(r=>!r.done&&now>=r.dueAt);due.forEach(r=>r.done=true);if(due.length)render();
  if(due.length)say("Erinnerungszeit erreicht oder überschritten (Anzeige möglicherweise verspätet): "+due.map(r=>r.name).join("; ")+".");
 }
 setInterval(checkDue,15000);
