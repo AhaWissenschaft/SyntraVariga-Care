@@ -47,8 +47,10 @@ function checkDue(){
  if(due.length){
   // Beim automatischen Aktualisieren den Tastaturfokus auf dem gleichen Löschknopf behalten.
   const focusedIndex=[...items.querySelectorAll("li button")].indexOf(document.activeElement);
+  const focusedDueIndex=[...dueItems.querySelectorAll("li button")].indexOf(document.activeElement);
   render();
   if(focusedIndex>=0)items.querySelectorAll("li button")[focusedIndex]?.focus({preventScroll:true});
+  else if(focusedDueIndex>=0)dueItems.querySelectorAll("li button")[focusedDueIndex]?.focus({preventScroll:true});
  }
  if(due.length)say("Erinnerungszeit erreicht oder überschritten (Anzeige möglicherweise verspätet): "+due.map(r=>r.name).join("; ")+".");
  return due.length;
