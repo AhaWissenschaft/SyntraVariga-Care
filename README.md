@@ -21,7 +21,7 @@ Die Basis soll dauerhaft kostenlos bleiben. Die Anwendung soll leicht verständl
 
 ## Weihnachtsaktion: Schenk Zeit statt noch ein Geschenk
 
-Die erste kostenfreie Mitmachaktion ist das **[Goldene Zeit-Ticket](KAMPAGNE/GOLDENES_ZEIT_TICKET.html)**: eine druckbare Karte für eine gemeinsame halbe Stunde. Datei herunterladen, lokal im Browser öffnen und ausdrucken. **Für Menschen, die größere Schrift bevorzugen:** [Zeit-Ticket in großer Schrift (druckfreundlich)](KAMPAGNE/ZEIT_TICKET_GROSSE_SCHRIFT.html). Beide Varianten können ohne Anmeldung ausgedruckt werden; eine Prüfung mit realen Nutzern steht noch aus. Es wird weder eine App noch ein medizinischer Service verschenkt.
+Die erste kostenfreie Mitmachaktion ist das **[Goldene Zeit-Ticket](KAMPAGNE/GOLDENES_ZEIT_TICKET.html)**: eine druckbare Karte für eine gemeinsame halbe Stunde. Datei herunterladen, lokal im Browser öffnen und ausdrucken. **Für Menschen, die größere Schrift bevorzugen:** [Zeit-Ticket in großer Schrift (druckfreundlich)](KAMPAGNE/ZEIT_TICKET_GROSSE_SCHRIFT.html). Beide Varianten können ohne Anmeldung ausgedruckt werden. **Ohne Drucker oder Browser:** [Einfaches Zeit-Ticket zum Abschreiben](KAMPAGNE/ZEIT_TICKET_OHNE_BROWSER.md). Namen und Termin bitte nur auf Papier eintragen. Eine Prüfung mit realen Nutzern steht noch aus. Es wird weder eine App noch ein medizinischer Service verschenkt.
 
 Die [Weihnachtsstrategie mit Videoidee und Prüfkriterien](KAMPAGNE/WEIHNACHTS_KAMPAGNE_2026.md) ist offen dokumentiert. Eine eigenständige öffentlich freigegebene Website und ein Social-Media-Livegang sind noch nicht erfolgt.
 
