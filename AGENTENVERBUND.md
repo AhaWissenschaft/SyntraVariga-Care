@@ -61,3 +61,13 @@ Recherche (:23) → Redaktion (:33) → QA (:13 im nächsten geeigneten Lauf) �
 Die [Weihnachtskampagne 2026](KAMPAGNE/WEIHNACHTS_KAMPAGNE_2026.md) ist der aktuelle gemeinsame Redaktionsplan. Das [Goldene Zeit-Ticket](KAMPAGNE/GOLDENES_ZEIT_TICKET.html) ist das erste fertige, kostenfreie Mitmachartefakt.
 
 **Wöchentliche Lernschleife:** :23 identifiziert echte Bedürfnis-/Partnerhinweise, :33 erstellt eine konkrete Botschaft, :13 prüft kritische Aussagen und Barrieren, :51 setzt den wichtigsten sicheren Beitrag um. Jede Rolle schreibt messbar beendbare Unteraufgaben statt selbst neue Agenten zu erzeugen. Ohne echten neuen Nutzen keine neuen Artikel, kein Spam, kein künstlicher Fortschritt. Projektseite ist bislang nur im Repository, nicht als freigegebene App live.
+
+## Produktfokus ab 13.11.2026 – verbindliche Priorisierung
+
+**SyntraVariga Care ist das Hauptprodukt.** Der sympathische Drache ist ausschließlich Maskottchen und verständliche Erklärfigur. Das Goldene Zeit-Ticket und „Schenk Zeit. Nicht noch ein Ding.“ bleiben eine **separate, optionale Weihnachtsaktion**, keine Kernfunktion der App und kein Ersatz für Produktentwicklung.
+
+**Ressourcenregel:** Mindestens 70 % der Arbeitspriorität für Care-Demo, Bedienbarkeit, lokale/offlinefähige Funktionen, Datenschutz und reproduzierbare Tests; höchstens 30 % für Öffentlichkeitsarbeit. Diese Quote ist eine Planungsregel, keine gemessene Zeiterfassung.
+
+**Verbindlicher Ablauf pro stündlichem Lauf:** (1) letzte Änderungen und Queue lesen; (2) genau ein kleines, überprüfbares Produkt- oder produktnahes Arbeitsergebnis umsetzen; (3) Tests/Prüfung mit tatsächlichem Ergebnis dokumentieren; (4) GitHub-Commit und SHA-Readback nachweisen; (5) den nächsten vorhandenen Worker mit klarer Abnahmebedingung versorgen. Falls eine sichere Änderung technisch unmöglich ist: reproduzierbaren Blocker mit nächstem Fixschritt nennen; keinen Füll-Commit und keinen erfundenen Erfolg erzeugen.
+
+**Erster vertikaler Produktschnitt:** Vorhandene lokale Web-Demo prüfen und eine einfache lokale Erinnerungsfunktion als möglichen nächsten Schritt bewerten und implementieren, sofern sicher und architektonisch passend. Keine medizinischen Dosierungsentscheidungen, kein Notrufversprechen und keine Speicherung sensibler Daten ohne gesonderte Sicherheitsprüfung. QA testet die tatsächlich gebaute Funktion, Community formuliert verständliche Bedienhinweise, Scout prüft eine konkrete Nutzeranforderung. Bereits offene Aufgaben zuerst schließen; maximal 12 OPEN.
