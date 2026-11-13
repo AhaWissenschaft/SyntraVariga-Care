@@ -27,7 +27,7 @@ f.addEventListener("submit",e=>{
  dueAt.setHours(hours,minutes,0,0);const tomorrow=dueAt<=now;if(tomorrow)dueAt.setDate(dueAt.getDate()+1);
  reminders.push({id:++id,name,time:time.value,dueAt:dueAt.getTime(),done:false});render();say("Nur für diese Sitzung hinzugefügt: "+name+", "+time.value+(tomorrow?" (morgen).":" (heute)."));task.value="";time.value="";
 });
-f.addEventListener("reset",()=>say(""));
+f.addEventListener("reset",()=>{say("Eingabe zurückgesetzt.");task.focus()});
 function checkDue(){
  const now=Date.now(),due=reminders.filter(r=>!r.done&&now>=r.dueAt);due.forEach(r=>r.done=true);if(due.length)render();
  if(due.length)say("Erinnerungszeit erreicht oder überschritten (Anzeige möglicherweise verspätet): "+due.map(r=>r.name).join("; ")+".");
