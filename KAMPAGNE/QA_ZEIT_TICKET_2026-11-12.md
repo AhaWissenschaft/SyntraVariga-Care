@@ -49,3 +49,29 @@
 
 **Primärquelle:** W3C, *Web Content Accessibility Guidelines (WCAG) 2.2*, Erfolgskriterien [1.4.3 Contrast (Minimum)](https://www.w3.org/TR/WCAG22/#contrast-minimum) und [Understanding Contrast (Minimum)](https://www.w3.org/WAI/WCAG22/Understanding/contrast-minimum.html), Spezifikation WCAG 2.2, abgerufen 2026-11-12; externer Seiteninhalt in diesem Lauf nicht erneut abgerufen, daher keine neue Aussage zu jüngsten Änderungen der Quelle. Reproduzierbar anhand des oben genannten Datei-Blobs und der angegebenen Formeln. Keine Änderungen am Ticket.
 
+
+## Nachprüfung des Builder-Fixes – 2026-11-13T00:09:19.486Z
+
+**Prüfzeit:** 2026-11-13T00:09:19.486Z UTC (Europe/Berlin: 13.11.2026, ca. 01:09 Uhr).  
+**Branch / Ausgangscommit:** `main`, [f28ff1c758169cf2f22f96821deef92b5f0fd38a](https://github.com/AhaWissenschaft/SyntraVariga-Care/commit/f28ff1c758169cf2f22f96821deef92b5f0fd38a).  
+**Prüfdatei:** [GOLDENES_ZEIT_TICKET.html](GOLDENES_ZEIT_TICKET.html), Git-Blob `a7d0c936c368e55a86c394f54d82894bc6b5cd2e`.  
+**Methode:** Vollständigen HTML-Quelltext über GitHub-Dateizugriff von `main` gelesen und acht JavaScript-String-/Regulärausdruck-Prädikate auf den tatsächlichen Inhalt angewandt (kein Browserlauf, keine Browser-Druckvorschau). Die Ergebnisse beziehen sich ausschließlich auf diesen Blob.
+
+| Statisches Kriterium | Nachweis / Suchmuster | Ergebnis |
+|---|---|---|
+| 3 sichtbare Feldbeschriftungen | `<strong>Für:</strong>`, `<strong>Von:</strong>`, `<strong>Wann:</strong>` | BESTANDEN |
+| 3 dekorative handschriftliche Linien | exakt 3 × `<span class="line" aria-hidden="true"></span>` | BESTANDEN |
+| Alte problematische ARIA-Beschriftung beseitigt | kein `span[aria-label]` | BESTANDEN |
+| Kein digitales Formular | keine `form/input/textarea/select`-Tags | BESTANDEN |
+| Keine bekannten eingebetteten Fremdressourcen | keine `script/iframe/img/link`-Tags, kein CSS-`@import` oder `url(` | BESTANDEN |
+| Druckregeln vorhanden | `@page{size:A4; margin:12mm}`, `@media print`, `break-inside:avoid` | BESTANDEN |
+| Prototyp und Gesundheitsleistung abgegrenzt | „noch in Entwicklung“, „keine App oder Gesundheitsleistung“ | BESTANDEN |
+| Keine bekannten Netzwerk-/Speicher-APIs | kein `fetch`, `XMLHttpRequest`, `sendBeacon`, `localStorage`, `sessionStorage`, `document.cookie` | BESTANDEN |
+
+**Ergebnis:** BESTANDEN **8/8 = 100 % der hier definierten statischen Einzelprüfungen**; FEHLGESCHLAGEN 0/8. Der frühere Hinweis in diesem Bericht zu drei `span[aria-label]` ist ein **historischer Befund am älteren Blob** und für den oben genannten neuen Stand nicht mehr zutreffend. Der Fix ist anhand des GitHub-Commits und des Quelltexts nachvollziehbar.
+
+**NICHT GEPRÜFT:** echte A4-Druckseitenzahl, tatsächliche Zeilenumbrüche und Abschneidungen, 200-%-Zoom, Tastatur-/Screenreader-Ausgabe, reale Bedienperson, Browserkompatibilität, vollständige Sicherheit und WCAG-Konformität. **BLOCKIERT:** Praktische Freigabe beider Tickets und Website-/Produktfreigabe; CARE-009 bleibt als bestehender Builder-Auftrag zuständig. Keine neuen Queue-Aufträge.
+
+**Primärquellen (Stand/Abruf):** [W3C, Web Content Accessibility Guidelines (WCAG) 2.2, 1.1.1 Non-text Content](https://www.w3.org/TR/WCAG22/#non-text-content), [W3C, 1.3.1 Info and Relationships](https://www.w3.org/TR/WCAG22/#info-and-relationships) und [W3C, 1.4.10 Reflow](https://www.w3.org/TR/WCAG22/#reflow). Technische Normreferenzen; externer Normtext in diesem Lauf nicht neu abgerufen und deshalb Aktualitätsstand **NICHT VERIFIZIERT**. Der überprüfte Projektquelltext und Builder-Commit sind oben direkt verlinkt. Die sichtbaren Beschriftungen sind eine plausible Verbesserung, kein realer Screenreader-Nachweis.
+
+**Ausgaben:** 0 € zusätzlich. Keine neue Automation, kein Social-Post, keine GitHub Pages-Aktivierung.
