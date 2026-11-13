@@ -15,7 +15,7 @@ function render(){
   const li=document.createElement("li"),label=document.createElement("span"),button=document.createElement("button");
   label.textContent=r.name+" – "+r.time+(r.done?" (Zeit erreicht)":" (ausstehend)");button.textContent="Erinnerung löschen";button.type="button";
   button.setAttribute("aria-label","Erinnerung löschen: "+r.name);
-  button.addEventListener("click",()=>{reminders=reminders.filter(x=>x.id!==r.id);render();say("Erinnerung gelöscht.")});
+  button.addEventListener("click",()=>{reminders=reminders.filter(x=>x.id!==r.id);render();task.focus();say("Erinnerung gelöscht.")});
   li.append(label,document.createTextNode(" "),button);items.append(li);
  }
 }
